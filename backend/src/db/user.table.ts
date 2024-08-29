@@ -20,6 +20,8 @@ interface CompanyType {
 export interface UserType {
   _id: number;
   name: string;
+  username: string;
+  password: string;
   email: string;
   address: AddressType;
   phone: string;
@@ -27,11 +29,12 @@ export interface UserType {
   company: CompanyType;
 }
 
-export const UserTable = [
+export const UserTable: UserType[] = [
   {
-    _id: 1,
+    _id: 0,
     name: "Leanne Graham",
     username: "Bret",
+    password: "123456",
     email: "Sincere@april.biz",
     address: {
       street: "Kulas Light",
@@ -52,9 +55,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 2,
+    _id: 1,
     name: "Ervin Howell",
     username: "Antonette",
+    password: "123456",
     email: "Shanna@melissa.tv",
     address: {
       street: "Victor Plains",
@@ -75,9 +79,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 3,
+    _id: 2,
     name: "Clementine Bauch",
     username: "Samantha",
+    password: "123456",
     email: "Nathan@yesenia.net",
     address: {
       street: "Douglas Extension",
@@ -98,9 +103,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 4,
+    _id: 3,
     name: "Patricia Lebsack",
     username: "Karianne",
+    password: "123456",
     email: "Julianne.OConner@kory.org",
     address: {
       street: "Hoeger Mall",
@@ -121,9 +127,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 5,
+    _id: 4,
     name: "Chelsey Dietrich",
     username: "Kamren",
+    password: "123456",
     email: "Lucio_Hettinger@annie.ca",
     address: {
       street: "Skiles Walks",
@@ -144,9 +151,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 6,
+    _id: 5,
     name: "Mrs. Dennis Schulist",
     username: "Leopoldo_Corkery",
+    password: "123456",
     email: "Karley_Dach@jasper.info",
     address: {
       street: "Norberto Crossing",
@@ -167,9 +175,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 7,
+    _id: 6,
     name: "Kurtis Weissnat",
     username: "Elwyn.Skiles",
+    password: "123456",
     email: "Telly.Hoeger@billy.biz",
     address: {
       street: "Rex Trail",
@@ -190,9 +199,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 8,
+    _id: 7,
     name: "Nicholas Runolfsdottir V",
     username: "Maxime_Nienow",
+    password: "123456",
     email: "Sherwood@rosamond.me",
     address: {
       street: "Ellsworth Summit",
@@ -213,9 +223,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 9,
+    _id: 8,
     name: "Glenna Reichert",
     username: "Delphine",
+    password: "123456",
     email: "Chaim_McDermott@dana.io",
     address: {
       street: "Dayna Park",
@@ -236,9 +247,10 @@ export const UserTable = [
     }
   },
   {
-    _id: 10,
+    _id: 9,
     name: "Clementina DuBuque",
     username: "Moriah.Stanton",
+    password: "123456",
     email: "Rey.Padberg@karina.biz",
     address: {
       street: "Kattie Turnpike",

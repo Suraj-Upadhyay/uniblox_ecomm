@@ -14,7 +14,7 @@ export interface ItemType {
 
 export const ItemTable: ItemType[] = [
   {
-    _id: 1,
+    _id: 0,
     title: "Long sleeve Jacket",
     isNew: true,
     oldPrice: "200",
@@ -27,7 +27,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 2,
+    _id: 1,
     title: "Jacket with wollen hat",
     isNew: true,
     oldPrice: "70",
@@ -40,7 +40,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 3,
+    _id: 2,
     title: "Compact fashion t-shirt",
     isNew: true,
     oldPrice: "70",
@@ -53,7 +53,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 4,
+    _id: 3,
     title: "Blue jins",
     isNew: true,
     oldPrice: "70",
@@ -66,7 +66,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 5,
+    _id: 4,
     title: "Skirts with full setup",
     isNew: true,
     oldPrice: "800",
@@ -79,7 +79,7 @@ export const ItemTable: ItemType[] = [
     rating: 5
   },
   {
-    _id: 6,
+    _id: 5,
     title: "Yellow Hoody",
     isNew: false,
     oldPrice: "200",
@@ -92,7 +92,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 7,
+    _id: 6,
     title: "Black t-shirt for women",
     isNew: false,
     oldPrice: "60",
@@ -105,7 +105,7 @@ export const ItemTable: ItemType[] = [
     rating: 2
   },
   {
-    _id: 8,
+    _id: 7,
     title: "Gouwn with Red velvet",
     isNew: false,
     oldPrice: "500",
@@ -118,7 +118,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 9,
+    _id: 8,
     title: "Pink beauty",
     isNew: false,
     oldPrice: "150",
@@ -131,7 +131,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 10,
+    _id: 9,
     title: "Jean's stylish Jacket",
     isNew: false,
     oldPrice: "250",
@@ -144,7 +144,7 @@ export const ItemTable: ItemType[] = [
     rating: 5
   },
   {
-    _id: 11,
+    _id: 10,
     title: "Jamdani Saree",
     isNew: false,
     oldPrice: "1000",
@@ -157,7 +157,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 12,
+    _id: 11,
     title: "Black Jacket",
     isNew: false,
     oldPrice: "200",
@@ -170,7 +170,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 13,
+    _id: 12,
     title: "Black top with jeans",
     isNew: false,
     oldPrice: "130",
@@ -183,7 +183,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 14,
+    _id: 13,
     title: "Clothes with bag",
     isNew: false,
     oldPrice: "80",
@@ -196,7 +196,7 @@ export const ItemTable: ItemType[] = [
     rating: 2
   },
   {
-    _id: 15,
+    _id: 14,
     title: "Stylish jeans in lightblue",
     isNew: false,
     oldPrice: "120",
@@ -209,7 +209,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 16,
+    _id: 15,
     title: "Unknown horizon",
     isNew: false,
     oldPrice: "400",
@@ -222,7 +222,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 17,
+    _id: 16,
     title: "Light tops",
     isNew: false,
     oldPrice: "140",
@@ -235,7 +235,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 18,
+    _id: 17,
     title: "Khakhi jeans",
     isNew: false,
     oldPrice: "250",
@@ -248,7 +248,7 @@ export const ItemTable: ItemType[] = [
     rating: 4
   },
   {
-    _id: 19,
+    _id: 18,
     title: "Black full sleeve",
     isNew: false,
     oldPrice: "180",
@@ -261,7 +261,7 @@ export const ItemTable: ItemType[] = [
     rating: 3
   },
   {
-    _id: 20,
+    _id: 19,
     title: "Formal for Men",
     isNew: false,
     oldPrice: "500",
