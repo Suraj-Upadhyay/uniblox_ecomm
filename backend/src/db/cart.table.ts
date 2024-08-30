@@ -1,9 +1,3 @@
-import { ItemType } from "./item.table";
-
-export interface CartType {
-  _id: number;
-  ownerId: number;
-  items: ItemType[];
-}
+import { CartType } from "./types";
 
 export const CartTable: CartType[] = [];

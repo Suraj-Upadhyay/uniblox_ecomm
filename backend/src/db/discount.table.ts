@@ -1,6 +1,3 @@
-export interface DiscountType {
-  discountCode: string;
-  expiresOn: Date;
-}
+import { DiscountType } from "./types";
 
 export const DiscountCodeTable: DiscountType[] = [];

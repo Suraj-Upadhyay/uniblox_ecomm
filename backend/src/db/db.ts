@@ -16,6 +16,7 @@ class Table {
   insert(record: Record<string, any>) {
     record._id = this.data.length;
     this.data.push({ ...record });
+    return record._id;
   }
 
   findById(id: number) {
@@ -42,6 +43,7 @@ class Table {
 }
 
 export default class DB {
+  [x: string]: any;
   private static _instance: DB;
 
   private tables: string[] = [];

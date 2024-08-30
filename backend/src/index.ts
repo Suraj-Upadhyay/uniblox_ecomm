@@ -13,6 +13,7 @@ const app = Express();
 
 app.use(morgan("tiny"));
 app.use(cors());
+app.use(Express.json());
 
 app.use(router);
 

@@ -1,16 +1,4 @@
-type ItemCategoryType = "men" | "women" | "kids";
-
-export interface ItemType {
-  _id: number;
-  title: string;
-  isNew: boolean;
-  oldPrice: string;
-  price: number;
-  description: string;
-  category: ItemCategoryType;
-  image: string;
-  rating: number;
-}
+import { ItemType } from "./types";
 
 export const ItemTable: ItemType[] = [
   {
