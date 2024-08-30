@@ -40,6 +40,20 @@ class Table {
     const deletedData = this.data.splice(requiredId, 1);
     return deletedData[0];
   }
+
+  where(condition: any) {
+    const requiredRecord = this.data.find((record) => {
+      let allTrue = true;
+      for (let conditionProperty in condition) {
+        if (record.hasOwnProperty(conditionProperty)) {
+          if (!(record[conditionProperty] == condition[conditionProperty]))
+            allTrue = false;
+        }
+      }
+      return allTrue;
+    });
+    return requiredRecord;
+  }
 }
 
 export default class DB {
