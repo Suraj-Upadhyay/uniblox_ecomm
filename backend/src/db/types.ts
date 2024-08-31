@@ -50,7 +50,9 @@ export interface CartType {
 }
 
 export interface DiscountType {
+  _id: number;
   discountCode: string;
+  discountRate: number;
   expiresOn: Date;
 }
 
