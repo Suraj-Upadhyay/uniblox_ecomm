@@ -4,6 +4,7 @@ import { UserService } from "../service/user.service";
 import { generateToken, getTokenPayloadForUser } from "../utils/jwt.util";
 import { removeCookie, setCookie } from "../utils/cookie.util";
 import { UserType } from "../db/types";
+import { CartService } from "../service/cart.service";
 
 export async function signup(req: Request, res: Response) {
   try {
@@ -49,12 +50,21 @@ export async function signin(req: Request, res: Response) {
       });
       return;
     }
+
+    // Check if there's a cart for the user else, create it.
+    const userCart = CartService.getCartForUserId(requiredUser._id);
+    if (userCart === undefined) {
+      CartService.createCartForUser(requiredUser._id);
+    }
+
+    // Set cookie after singin
     const tokenPayload = getTokenPayloadForUser({
       _id: requiredUser._id,
       username: requiredUser.username
     });
     const cookie = generateToken(tokenPayload);
     await setCookie("jwt", cookie, res);
+
     res.status(200).json({
       message: "User signed in successfully"
     });
