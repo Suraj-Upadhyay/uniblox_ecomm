@@ -1,10 +1,21 @@
 import { Request, Response } from "express";
 import { PurchaseService } from "../service/purchase.service";
+import { DiscountService } from "../service/discount.service";
 
 export function purchase(req: Request, res: Response) {
   try {
-    const { userId } = req.body;
-    PurchaseService.makePurchase(userId);
+    const { userId, discountCode } = req.body;
+
+    const requiredDiscountCode = DiscountService.getDiscountCode(discountCode);
+    if (requiredDiscountCode === undefined || requiredDiscountCode.expiresOn < new Date()) {
+      res.status(402).json({
+        message: "Invalid Discount Code provided"
+      });
+      return;
+    }
+
+    PurchaseService.makePurchase(userId, discountCode);
+
     res.status(200).json({
       message: "Purchase made successfully"
     });
