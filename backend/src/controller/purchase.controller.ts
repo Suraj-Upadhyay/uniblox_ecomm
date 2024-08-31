@@ -7,7 +7,10 @@ export function purchase(req: Request, res: Response) {
     const { userId, discountCode } = req.body;
 
     const requiredDiscountCode = DiscountService.getDiscountCode(discountCode);
-    if (requiredDiscountCode === undefined || requiredDiscountCode.expiresOn < new Date()) {
+    if (
+      requiredDiscountCode === undefined ||
+      requiredDiscountCode.expiresOn < new Date()
+    ) {
       res.status(402).json({
         message: "Invalid Discount Code provided"
       });
@@ -27,8 +30,13 @@ export function purchase(req: Request, res: Response) {
   }
 }
 
-export function getPurchaseInformation(_: Request, res: Response) {
+export function getPurchaseInformation(req: Request, res: Response) {
   try {
+    const { role } = req.body.auth;
+    if (role !== "Admin") {
+      res.status(403).json({ message: "Forbidden" });
+      return;
+    }
     const purchaseInfo = PurchaseService.getPurchaseInformation();
     res.status(200).json({
       message: "Purchase information fetched successfully",

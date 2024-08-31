@@ -57,6 +57,15 @@ export function createItem(req: Request, res: Response) {
       image,
       rating
     } = req.body;
+
+    const { role } = req.body.auth;
+    if (role !== "Admin") {
+      res.status(403).json({
+        message: "Forbidden"
+      });
+      return;
+    }
+
     const itemId: number = ItemService.createNewItem(
       {
         title,
@@ -96,16 +105,26 @@ export function modifyItem(req: Request, res: Response) {
       image,
       rating
     } = req.body;
-    const updatedItem = ItemService.modifyItem(id, {
-      title,
-      isNew,
-      oldPrice,
-      price,
-      description,
-      category,
-      image,
-      rating
-    } as DataTypes.ItemType);
+
+    const { role } = req.body.auth;
+    if (role !== "Admin") {
+      res.status(403).json({ message: "Forbidden" });
+      return;
+    }
+
+    const updatedItem = ItemService.modifyItem(
+      id,
+      {
+        title,
+        isNew,
+        oldPrice,
+        price,
+        description,
+        category,
+        image,
+        rating
+      } as DataTypes.ItemType
+    );
     res.status(200).json({
       message: "Item updated successfully",
       data: {

@@ -4,6 +4,13 @@ import { DiscountService } from "../service/discount.service";
 export function createDiscount(req: Request, res: Response) {
   try {
     const { discountCode, discountRate, expiresOn } = req.body;
+    const { role } = req.body.auth;
+    if (role !== "Admin") {
+      res.status(403).json({
+        message: "Forbidden"
+      });
+      return;
+    }
     DiscountService.createDiscountCode(
       discountCode,
       +discountRate,

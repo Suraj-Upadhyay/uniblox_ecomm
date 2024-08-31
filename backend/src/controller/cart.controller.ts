@@ -6,7 +6,7 @@ import { CartService } from "../service/cart.service";
 export function addItemToCart(req: Request, res: Response) {
   try {
     const { itemId } = req.params;
-    const { userId } = req.body;
+    const { userId } = req.body.auth;
 
     const requiredItem = ItemService.getItemById(+itemId);
     if (requiredItem === undefined) {
@@ -43,7 +43,7 @@ export function addItemToCart(req: Request, res: Response) {
 export function removeItemFromCart(req: Request, res: Response) {
   try {
     const { itemId } = req.params;
-    const { userId } = req.body;
+    const { userId } = req.body.auth;
     CartService.removeItemFromCart(+userId, +itemId);
     res.status(200).json({
       message: "Item removed from cart successfully",
@@ -61,7 +61,7 @@ export function removeItemFromCart(req: Request, res: Response) {
 
 export function getTotalCartValue(req: Request, res: Response) {
   try {
-    const { userId } = req.body;
+    const { userId } = req.body.auth;
     const totalCartValue = CartService.getTotalCartValue(+userId);
     res.status(200).json({
       message: "Total cart value fetched successfully",
