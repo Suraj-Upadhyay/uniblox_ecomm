@@ -15,10 +15,15 @@ export async function signup(req: Request, res: Response) {
         username: username,
         password: password,
         email: email,
-        phone: phone
+        phone: phone,
+        role: "User"
       } as DataTypes.UserType
     );
-    const tokenPayload = getTokenPayloadForUser({_id: id, username: username});
+    const tokenPayload = getTokenPayloadForUser({
+      userId: id,
+      username: username,
+      role: "User"
+    });
     const cookie = generateToken(tokenPayload);
     await setCookie("jwt", cookie, res);
     res.status(200).json({
@@ -36,7 +41,9 @@ export async function signup(req: Request, res: Response) {
 export async function signin(req: Request, res: Response) {
   try {
     const { username, password } = req.body;
-    const requiredUser: UserType = UserService.getUserByUsername(username) as unknown as UserType;
+    const requiredUser: UserType = (UserService.getUserByUsername(
+      username
+    ) as unknown) as UserType;
     if (requiredUser === undefined) {
       res.status(404).json({
         message: "Username not found"
@@ -59,8 +66,9 @@ export async function signin(req: Request, res: Response) {
 
     // Set cookie after singin
     const tokenPayload = getTokenPayloadForUser({
-      _id: requiredUser._id,
-      username: requiredUser.username
+      userId: requiredUser._id,
+      username: requiredUser.username,
+      role: requiredUser.role
     });
     const cookie = generateToken(tokenPayload);
     await setCookie("jwt", cookie, res);

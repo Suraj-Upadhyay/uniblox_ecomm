@@ -17,7 +17,7 @@ interface CompanyType {
   bs: string;
 }
 
-type RoleType = "Admin" | "User";
+export type RoleType = "Admin" | "User";
 
 export interface UserType {
   _id: number;

@@ -1,11 +1,13 @@
 import jsonwebtoken from "jsonwebtoken";
+import { DataTypes } from "../db";
 
 export function getTokenPayloadForUser(user: {
-  _id: number;
+  userId: number;
   username: string;
+  role: DataTypes.RoleType;
 }) {
   return {
-    id: user._id,
+    id: user.userId,
     username: user.username
   };
 }
