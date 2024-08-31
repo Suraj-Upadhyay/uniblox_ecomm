@@ -7,6 +7,7 @@ export const UserTable: UserType[] = [
     username: "Bret",
     password: "123456",
     email: "Sincere@april.biz",
+    role: "Admin",
     address: {
       street: "Kulas Light",
       suite: "Apt. 556",
@@ -31,6 +32,7 @@ export const UserTable: UserType[] = [
     username: "Antonette",
     password: "123456",
     email: "Shanna@melissa.tv",
+    role: "User",
     address: {
       street: "Victor Plains",
       suite: "Suite 879",
@@ -55,6 +57,7 @@ export const UserTable: UserType[] = [
     username: "Samantha",
     password: "123456",
     email: "Nathan@yesenia.net",
+    role: "User",
     address: {
       street: "Douglas Extension",
       suite: "Suite 847",
@@ -79,6 +82,7 @@ export const UserTable: UserType[] = [
     username: "Karianne",
     password: "123456",
     email: "Julianne.OConner@kory.org",
+    role: "User",
     address: {
       street: "Hoeger Mall",
       suite: "Apt. 692",
@@ -103,6 +107,7 @@ export const UserTable: UserType[] = [
     username: "Kamren",
     password: "123456",
     email: "Lucio_Hettinger@annie.ca",
+    role: "User",
     address: {
       street: "Skiles Walks",
       suite: "Suite 351",
@@ -127,6 +132,7 @@ export const UserTable: UserType[] = [
     username: "Leopoldo_Corkery",
     password: "123456",
     email: "Karley_Dach@jasper.info",
+    role: "User",
     address: {
       street: "Norberto Crossing",
       suite: "Apt. 950",
@@ -151,6 +157,7 @@ export const UserTable: UserType[] = [
     username: "Elwyn.Skiles",
     password: "123456",
     email: "Telly.Hoeger@billy.biz",
+    role: "User",
     address: {
       street: "Rex Trail",
       suite: "Suite 280",
@@ -175,6 +182,7 @@ export const UserTable: UserType[] = [
     username: "Maxime_Nienow",
     password: "123456",
     email: "Sherwood@rosamond.me",
+    role: "User",
     address: {
       street: "Ellsworth Summit",
       suite: "Suite 729",
@@ -199,6 +207,7 @@ export const UserTable: UserType[] = [
     username: "Delphine",
     password: "123456",
     email: "Chaim_McDermott@dana.io",
+    role: "User",
     address: {
       street: "Dayna Park",
       suite: "Suite 449",
@@ -223,6 +232,7 @@ export const UserTable: UserType[] = [
     username: "Moriah.Stanton",
     password: "123456",
     email: "Rey.Padberg@karina.biz",
+    role: "User",
     address: {
       street: "Kattie Turnpike",
       suite: "Suite 198",

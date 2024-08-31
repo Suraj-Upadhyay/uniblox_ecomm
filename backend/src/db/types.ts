@@ -17,12 +17,15 @@ interface CompanyType {
   bs: string;
 }
 
+type RoleType = "Admin" | "User";
+
 export interface UserType {
   _id: number;
   name: string;
   username: string;
   password: string;
   email: string;
+  role: RoleType;
   address?: AddressType;
   phone: string;
   website?: string;
