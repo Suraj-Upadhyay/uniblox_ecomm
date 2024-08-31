@@ -35,9 +35,14 @@ export class CartService {
   public static getTotalCartValue(userId: number) {
     let total = 0;
     const requiredCart = this.getCartForUserId(userId);
-    for (let i = 0; i < requiredCart.items.length; i++ ) {
+    for (let i = 0; i < requiredCart.items.length; i++) {
       total += requiredCart.items[i].price;
     }
     return total;
+  }
+
+  public static emptyCart(userId: number) {
+    const requiredCart = this.getCartForUserId(userId);
+    return this.db.Cart.updateById(requiredCart._id, { items: [] });
   }
 }
